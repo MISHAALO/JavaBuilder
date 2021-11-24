@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  builder:
+    build: 
+      context:  builder
+    image: builder
+    container_name: builder
+    volumes:
+      - /d01/volumes:/builder/
+
+  tomcat:
+    build: 
+      context:  tomcat
+    image: tomcat
+    ports:
+     - 8011:8080
+    container_name: tomcat
+    
